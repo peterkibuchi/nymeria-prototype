@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@t3-oss/env-nextjs':
         specifier: ^0.13.8
-        version: 0.13.8(typescript@5.8.3)(zod@3.25.76)
+        version: 0.13.8(typescript@5.8.3)(zod@4.0.5)
       drizzle-orm:
         specifier: ^0.44.3
         version: 0.44.3(gel@2.1.1)(postgres@3.4.7)
@@ -27,8 +27,8 @@ importers:
         specifier: ^19.1.0
         version: 19.1.0(react@19.1.0)
       zod:
-        specifier: ^3.25.76
-        version: 3.25.76
+        specifier: ^4.0.5
+        version: 4.0.5
     devDependencies:
       '@biomejs/biome':
         specifier: 2.1.1
@@ -1146,8 +1146,8 @@ packages:
     resolution: {integrity: sha512-YgvUTfwqyc7UXVMrB+SImsVYSmTS8X/tSrtdNZMImM+n7+QTriRXyXim0mBrTXNeqzVF0KWGgHPeiyViFFrNDw==}
     engines: {node: '>=18'}
 
-  zod@3.25.76:
-    resolution: {integrity: sha512-gzUt/qt81nXsFGKIFcC3YnfEAx5NkunCfnDlvuBSSFS02bcXu4Lmea0AFIUwbLWxWPx3d9p8S5QoaujKcNQxcQ==}
+  zod@4.0.5:
+    resolution: {integrity: sha512-/5UuuRPStvHXu7RS+gmvRf4NXrNxpSllGwDnCBcJZtQsKrviYXm54yDGV2KYNLT5kq0lHGcl7lqWJLgSaG+tgA==}
 
 snapshots:
 
@@ -1491,17 +1491,17 @@ snapshots:
     dependencies:
       tslib: 2.8.1
 
-  '@t3-oss/env-core@0.13.8(typescript@5.8.3)(zod@3.25.76)':
+  '@t3-oss/env-core@0.13.8(typescript@5.8.3)(zod@4.0.5)':
     optionalDependencies:
       typescript: 5.8.3
-      zod: 3.25.76
+      zod: 4.0.5
 
-  '@t3-oss/env-nextjs@0.13.8(typescript@5.8.3)(zod@3.25.76)':
+  '@t3-oss/env-nextjs@0.13.8(typescript@5.8.3)(zod@4.0.5)':
     dependencies:
-      '@t3-oss/env-core': 0.13.8(typescript@5.8.3)(zod@3.25.76)
+      '@t3-oss/env-core': 0.13.8(typescript@5.8.3)(zod@4.0.5)
     optionalDependencies:
       typescript: 5.8.3
-      zod: 3.25.76
+      zod: 4.0.5
 
   '@tailwindcss/node@4.1.11':
     dependencies:
@@ -1924,4 +1924,4 @@ snapshots:
 
   yallist@5.0.0: {}
 
-  zod@3.25.76: {}
+  zod@4.0.5: {}
