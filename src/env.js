@@ -6,9 +6,11 @@ export const env = createEnv({
    * Specify your server-side environment variables schema here.
    */
   server: {
+    CONVEX_DEPLOYMENT: z.string(),
     NODE_ENV: z
       .enum(["development", "test", "production"])
       .default("development"),
+    SITE_URL: z.url(),
   },
 
   /**
@@ -16,7 +18,7 @@ export const env = createEnv({
    * To expose them to the client, prefix them with `NEXT_PUBLIC_`.
    */
   client: {
-    // NEXT_PUBLIC_CLIENTVAR: z.string(),
+    NEXT_PUBLIC_CONVEX_URL: z.url(),
   },
 
   /**
@@ -24,15 +26,21 @@ export const env = createEnv({
    * (e.g. middlewares) or client-side so we need to destruct manually.
    */
   runtimeEnv: {
+    CONVEX_DEPLOYMENT: process.env.CONVEX_DEPLOYMENT,
     NODE_ENV: process.env.NODE_ENV,
-    // NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
+    SITE_URL: process.env.SITE_URL,
+
+    NEXT_PUBLIC_CONVEX_URL: process.env.NEXT_PUBLIC_CONVEX_URL,
   },
 
   /**
    * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation.
    * This is especially useful for Docker builds.
    */
-  skipValidation: !!process.env.SKIP_ENV_VALIDATION,
+  skipValidation:
+    !!process.env.CI ||
+    !!process.env.SKIP_ENV_VALIDATION ||
+    process.env.npm_lifecycle_event === "lint",
 
   /**
    * Makes it so that empty strings are treated as undefined.
